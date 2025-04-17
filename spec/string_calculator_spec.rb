@@ -28,7 +28,7 @@ RSpec.describe StringCalculator do
 
     context 'with custom delimiter' do
       it 'should handle a custom delimiter specified in the beginning' do
-        expect(calc.add('//;\n1;2')).to eq(3)
+        expect(calc.add("//;\n1;2")).to eq(3)
       end
     end
   end
