@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class StringCalculator
   def add(numbers)
     return 0 if numbers.empty?
-   
+
     delimiters = determine_delimiters(numbers)
     num_str = extract_numbers_string(numbers)
 
