@@ -17,5 +17,9 @@ RSpec.describe StringCalculator do
     it 'should sum two comma seprated numbers' do
       expect(calc.add("1,8")).to eq(9)
     end
+
+    it 'should give the sum of any amount of numbers' do
+      expect(calc.add("1,4,6,7,8,2")).to eq(28)
+    end
   end
 end
