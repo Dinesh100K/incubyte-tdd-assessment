@@ -14,7 +14,7 @@ RSpec.describe StringCalculator do
       expect(calc.add('5')).to eq(5)
     end
 
-    it 'should sum two comma seprated numbers' do
+    it 'should sum two comma separated numbers' do
       expect(calc.add('1,8')).to eq(9)
     end
 
@@ -51,12 +51,12 @@ RSpec.describe StringCalculator do
     end
   end
 
-  describe 'validate input numners' do
+  describe 'validate input numbers' do
     it 'gives an error if negative numbers are passed in input' do
       expect { calc.add('1,2,-3,-4') }.to raise_error(ArgumentError, 'negative numbers not allowed -3,-4')
     end
 
-    it 'does not raise error if all numbers are positibe' do
+    it 'does not raise error if all numbers are positive' do
       expect { calc.add('1,2') }.not_to raise_error
     end
   end
