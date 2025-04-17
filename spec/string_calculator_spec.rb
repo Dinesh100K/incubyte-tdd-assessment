@@ -31,5 +31,15 @@ RSpec.describe StringCalculator do
         expect(calc.add("//;\n1;2")).to eq(3)
       end
     end
+
+    context 'with negative numbers' do
+      it 'raises on a single negative' do
+        expect { calc.add('-1,2') }.to raise_error(ArgumentError, 'negative numbers not allowed -1')
+      end
+  
+      it 'lists all negatives' do
+        expect { calc.add('-1,-4,3') }.to raise_error(ArgumentError, 'negative numbers not allowed -1,-4')
+      end
+    end
   end
 end
