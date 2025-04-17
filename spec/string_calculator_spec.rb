@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-describe StringCalculator do
+require 'string_calculator'
+
+RSpec.describe StringCalculator do
   let(:calc) { StringCalculator.new }
 
   describe "#add" do
