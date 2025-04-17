@@ -25,5 +25,11 @@ RSpec.describe StringCalculator do
     it 'should handle the newlines between the numbers and should give the sum' do
       expect(calc.add("1\n2,3")).to eq(6)
     end
+
+    context 'with custom delimiter' do
+      it 'should handle a custom delimiter specified in the beginning' do
+        expect(calc.add('//;\n1;2')).to eq(3)
+      end
+    end
   end
 end
