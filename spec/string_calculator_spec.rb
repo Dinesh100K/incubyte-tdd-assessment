@@ -13,5 +13,9 @@ RSpec.describe StringCalculator do
     it 'should return a number when single number input is present' do
       expect(calc.add("5")).to eq(5)
     end
+
+    it 'should sum two comma seprated numbers' do
+      expect(calc.add("1,8")).to eq(9)
+    end
   end
 end
