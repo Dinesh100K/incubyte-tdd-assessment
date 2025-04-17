@@ -13,6 +13,13 @@ class StringCalculator
     end
 
     nums = num_str.split(delimiters).map(&:to_i)
+
+     # Check for negatives
+     negatives = nums.select { |n| n.negative? }
+     if negatives.any?
+       raise ArgumentError, "negative numbers not allowed #{negatives.join(',')}"
+     end
+ 
     nums.sum
   end
 end
