@@ -17,7 +17,7 @@ class StringCalculator
     if numbers.start_with?('//')
       delimiter_spec, = numbers.split("\n", 2)
       custom = delimiter_spec[2..]
-      Regexp.new(Regexp.escape(custom))
+      Regexp.new("[#{Regexp.escape(custom)}\n]")
     else
       /,|\n/
     end
