@@ -60,4 +60,22 @@ RSpec.describe StringCalculator do
       expect{calc.add("1,2")}.not_to raise_error
     end
   end
+
+  describe 'edge cases' do
+    it 'should handle a single newline character' do
+      expect(calc.add("\n")).to eq(0)
+    end
+
+    it 'should handle multiple newline characters' do
+      expect(calc.add("\n\n")).to eq(0)
+    end
+
+    it 'should handle a custom delimiter with a single character' do
+      expect(calc.add("//a\n1a2")).to eq(3)
+    end
+
+    it 'should handle a custom delimiter with a special character' do
+      expect(calc.add("//$\n1$2")).to eq(3)
+    end
+  end
 end
