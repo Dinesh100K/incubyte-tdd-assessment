@@ -30,6 +30,14 @@ RSpec.describe StringCalculator do
       it 'should handle a custom delimiter specified in the beginning' do
         expect(calc.add("//;\n1;2")).to eq(3)
       end
+
+      it 'should handle a custom delimiter with multiple numbers' do
+        expect(calc.add("//;\n1;2;3;4")).to eq(10)
+      end
+
+      it 'should handle a custom delimiter with newline' do
+        expect(calc.add("//;\n1;2\n3;4")).to eq(10)
+      end
     end
 
     context 'with negative numbers' do
