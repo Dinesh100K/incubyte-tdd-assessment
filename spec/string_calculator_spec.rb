@@ -42,4 +42,14 @@ RSpec.describe StringCalculator do
       end
     end
   end
+
+  describe 'validate imput numners' do
+    it "gives an error if negative numbers are passed in input" do
+      expect{calc.add("1,2,-3,-4")}.to raise_error(ArgumentError, 'negative numbers not allowed -3,-4')
+    end
+
+    it "does not raise error if all numbers are positibe" do
+      expect{calc.add("1,2")}.not_to raise_error
+    end
+  end
 end
